@@ -4,18 +4,39 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
+    """
+    Drops all tables in the database.
+
+    Args:
+        cur: The cursor object to execute database commands.
+        conn: The connection object to commit changes to the database.
+
+    Database Side Effects:
+        * DELETE: All existing tables in the database.
+    """
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
 
 def create_tables(cur, conn):
+    """
+    Creates all tables in the database.
+
+    Args:
+        cur: The cursor object to execute database commands.
+        conn: The connection object to commit changes to the database.
+
+    Database Side Effects:
+        * CREATE: All necessary tables in the database.
+    """
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()
 
 
 def main():
+    """Main function to drop and create tables in the database."""
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
 
