@@ -43,6 +43,7 @@ the final fact and dimension tables ready for analytical processes.
 - `etl.py`: python script to populate staging tables and transform them
 - `sql_queries.py`: python script containing SQL queries for creating tables and the ELT process
 - `README.md`: markdown file containing this project report
+- `img`: folder containing evidence screenshots for the successful ELT
 
 
 ## Contribution
